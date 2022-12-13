@@ -94,3 +94,7 @@ module.exports.userlist = async(req, res) => {
     const users = await User.find({});
     res.render('user-list', {users});
 }
+
+module.exports.mainCategory = (req, res) => {
+    res.render('main-category');
+}

@@ -23,6 +23,8 @@ router.get('/profile', user.profile);
 
 router.get('/user-list', user.userlist);
 
-router.get('/user-profile', user.userProfile)
+router.get('/user-profile', user.userProfile);
+
+router.get('/main-category', user.mainCategory);
 
 module.exports = router

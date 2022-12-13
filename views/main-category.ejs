@@ -125,7 +125,7 @@
 							<div class="collapse show">
 								<ul class="sub-menu" id="categorys" data-parent="#sidebar-menu">
 									<li class="active">
-										<a class="sidenav-item-link" href="main-category.html">
+										<a class="sidenav-item-link" href="/admin/main-category">
 											<span class="nav-text">Main Category</span>
 										</a>
 									</li>
@@ -322,29 +322,39 @@
 									<!-- User image -->
 									<li class="dropdown-header">
 										<img src="/img/user/user.png" class="img-circle" alt="User Image" />
-										<div class="d-inline-block">
-											<%= currentUser.name %> <small class="pt-1"><%=currentUser.email%></small>
-										</div>
-									</li>
-									<li>
-										<a href="/admin/user-profile">
-											<i class="mdi mdi-account"></i> My Profile
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<i class="mdi mdi-email"></i> Message
-										</a>
-									</li>
-									<li>
-										<a href="#"> <i class="mdi mdi-diamond-stone"></i> Projects </a>
-									</li>
-									<li class="right-sidebar-in">
-										<a href="javascript:0"> <i class="mdi mdi-settings-outline"></i> Setting </a>
-									</li>
-									<li class="dropdown-footer">
-										<a href="/admin/logout"> <i class="mdi mdi-logout"></i> Log Out </a>
-									</li>
+										<% if(currentUser) {%> 
+											<div class="d-inline-block">
+												<%= currentUser.name %>   <small class="pt-1"> <%= currentUser.email  %>   </small>
+											</div>
+											
+										</li>
+										<li>
+											<a href="/admin/profile">
+												<i class="mdi mdi-account"></i> My Profile
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<i class="mdi mdi-email"></i> Message
+											</a>
+										</li>
+										<li>
+											<a href="#"> <i class="mdi mdi-diamond-stone"></i> Projects </a>
+										</li>
+										<li class="right-sidebar-in">
+											<a href="javascript:0"> <i class="mdi mdi-settings-outline"></i> Setting </a>
+										</li>
+										<li class="dropdown-footer">
+											<a href="/admin/logout"> <i class="mdi mdi-logout"></i> Log Out </a>
+										</li>
+										<% } else{%> 
+											<li>
+												<a href="/admin/login">Login</a>
+											</li>
+											<li>
+												<a href="/admin/register">Register</a>
+											</li>
+											<% } %> 
 								</ul>
 							</li>
 							<li class="dropdown notifications-menu custom-dropdown">
