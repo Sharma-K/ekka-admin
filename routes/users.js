@@ -11,7 +11,7 @@ router.route('/register')
 
 router.route('/login')
       .get(user.login)
-      .post(passport.authenticate('local', {successRedirect:'/', }), user.plogin)
+      .post(passport.authenticate('local', {successRedirect:'/', failureRedirect: '/admin/login' }), user.plogin)
 
 router.get('/about-us', user.aboutUs);
 
