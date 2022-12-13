@@ -86,6 +86,9 @@ module.exports.logout = (req, res, next) => {
 module.exports.profile = (req, res)=>{
     res.render('profile');
 }
+module.exports.userProfile = (req, res)=>{
+    res.render('user-profile');
+}
 
 module.exports.userlist = async(req, res) => {
     const users = await User.find({});

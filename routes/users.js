@@ -23,4 +23,6 @@ router.get('/profile', user.profile);
 
 router.get('/user-list', user.userlist);
 
+router.get('/user-profile', user.userProfile)
+
 module.exports = router
