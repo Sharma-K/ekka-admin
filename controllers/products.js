@@ -1,4 +1,5 @@
 const Product = require('../models/Products');
+const {cloudinary} = require('../cloudinary/index')
 
 module.exports.renderadd = async(req, res)=>{
     res.render('product-add');
@@ -66,6 +67,18 @@ module.exports.edit = async(req, res)=>{
 
     
     product.images.push(...img);
+
+    if(req.body.deleteImages)
+    {
+        console.log(req.body.deleteImages);
+        for(let filename of req.body.deleteImages)
+        {
+            await cloudinary.uploader.destroy(filename);
+            
+        }
+        await product.updateOne({$pull: {media: {filename: {$in: req.body.deleteImages}}}});
+
+    }
     const dt = new Date();
 
    product.timeStamp = dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate();  
