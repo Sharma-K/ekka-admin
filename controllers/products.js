@@ -54,12 +54,12 @@ module.exports.renderedit = async(req, res)=>{
 module.exports.edit = async(req, res)=>{
    
 
+    console.log(req.body);
     
     const {id} = req.params;
 
     const product = await Product.findByIdAndUpdate(id, {...req.body});
 
-    console.log('product',product);
 
   
    
@@ -70,13 +70,13 @@ module.exports.edit = async(req, res)=>{
 
     if(req.body.deleteImages)
     {
-        console.log(req.body.deleteImages);
+        console.log('*****',req.body.deleteImages);
         for(let filename of req.body.deleteImages)
         {
             await cloudinary.uploader.destroy(filename);
             
         }
-        await product.updateOne({$pull: {media: {filename: {$in: req.body.deleteImages}}}});
+        await product.updateOne({$pull: {images: {filename: {$in: req.body.deleteImages}}}});
 
     }
     const dt = new Date();
@@ -84,6 +84,8 @@ module.exports.edit = async(req, res)=>{
    product.timeStamp = dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate();  
 
     await product.save();
+    console.log('product',product);
+
 
     res.redirect('/product/list');
 
