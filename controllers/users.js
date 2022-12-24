@@ -98,3 +98,4 @@ module.exports.userlist = async(req, res) => {
 module.exports.mainCategory = (req, res) => {
     res.render('main-category');
 }
+

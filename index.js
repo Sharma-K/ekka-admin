@@ -85,7 +85,7 @@ app.use('/admin/', userRoutes);
 app.use('/product/', productRoutes);
 
 app.get('/', (req, res)=>{
-   console.log('**********currentUser**********', res.locals);
+  
     res.render('index');
 })
 

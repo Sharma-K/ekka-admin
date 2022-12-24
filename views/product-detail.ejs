@@ -155,7 +155,7 @@
 										</a>
 									</li>
 									<li class="">
-										<a class="sidenav-item-link" href="product-grid.html">
+										<a class="sidenav-item-link" href="/product/grid">
 											<span class="nav-text">Grid Product</span>
 										</a>
 									</li>
@@ -951,11 +951,14 @@
 
 								<div class="card-body product-detail">
 									<div class="row">
+										<% for(let p of products) {%>
 										<div class="col-xl-4 col-lg-6">
+											
 											<div class="row">
-												<% for(let p of products) {%>
+												
 													  
 												<div class="single-pro-img">
+													
 													<div class="single-product-scroll">
 														
 														
@@ -967,6 +970,8 @@
 															
 															
 														</div>
+														
+														
 													
 														<div class="single-nav-thumb">
 
@@ -983,56 +988,59 @@
 													</div>
 												</div>
 											
-											</div>
-										</div>
-										<div class="col-xl-5 col-lg-6">
-											<div class="row product-overview">
-												<div class="col-12">
-													<h5 class="product-title"><%= p.title %> </h5>
-													<p class="product-rate">
-														<i class="mdi mdi-star is-rated"></i>
-														<i class="mdi mdi-star is-rated"></i>
-														<i class="mdi mdi-star is-rated"></i>
-														<i class="mdi mdi-star is-rated"></i>
-														<i class="mdi mdi-star"></i>
-													</p>
-													<p class="product-desc"><%= p.description  %> </p>
-													<p class="product-desc">Lorem Ipsum is simply dummy text of the
-														printing and typesetting industry. Lorem Ipsum has been the
-														industry's standard dummy text ever since the 1990. Lorem Ipsum
-														is simply dummy text of the printing and typesetting industry.
-													</p>
-													<div class="ec-ofr">
-														<h6>Available offers</h6>
-														<ul>
-															<li><b>Special Price :</b> Get extra <%=p.discount  %>% off (price
-																inclusive of discount) <a href="#">T&C</a> </li>
-															
-														</ul>
-													</div>
-													<p class="product-price">Price: $<%=p.price  %> </p>
-													<p class="product-sku">SKU#: WH12</p>
-													
+											
+										
+										
+										
+									</div>
+									<div class="col-xl-5 col-lg-6">
+										<div class="row product-overview">
+											<div class="col-12">
+												<h5 class="product-title"><%= p.title %> </h5>
+												<p class="product-rate">
+													<i class="mdi mdi-star is-rated"></i>
+													<i class="mdi mdi-star is-rated"></i>
+													<i class="mdi mdi-star is-rated"></i>
+													<i class="mdi mdi-star is-rated"></i>
+													<i class="mdi mdi-star"></i>
+												</p>
+												<p class="product-desc"><%= p.description  %> </p>
+												<p class="product-desc">Lorem Ipsum is simply dummy text of the
+													printing and typesetting industry. Lorem Ipsum has been the
+													industry's standard dummy text ever since the 1990. Lorem Ipsum
+													is simply dummy text of the printing and typesetting industry.
+												</p>
+												<div class="ec-ofr">
+													<h6>Available offers</h6>
+													<ul>
+														<li><b>Special Price :</b> Get extra <%=p.discount  %>% off (price
+															inclusive of discount) <a href="#">T&C</a> </li>
+														
+													</ul>
+												</div>
+												<p class="product-price">Price: $<%=p.price  %> </p>
+												<p class="product-sku">SKU#: WH12</p>
+												
 
-													<div class="product-stock">
-														<div class="stock">
-															<p class="title">Available</p>
-															<p class="text"><%=p.countInStock  %> </p>
-														</div>
-														<div class="stock">
-															<p class="title">Pending</p>
-															<p class="text">50</p>
-														</div>
-														<div class="stock">
-															<p class="title">InOrder</p>
-															<p class="text">20</p>
-														</div>
+												<div class="product-stock">
+													<div class="stock">
+														<p class="title">Available</p>
+														<p class="text"><%=p.countInStock  %> </p>
+													</div>
+													<div class="stock">
+														<p class="title">Pending</p>
+														<p class="text">50</p>
+													</div>
+													<div class="stock">
+														<p class="title">InOrder</p>
+														<p class="text">20</p>
 													</div>
 												</div>
 											</div>
 										</div>
-										<% } %> 
-										<div class="col-xl-3 col-lg-12 u-card">
+									</div>
+								
+										<!-- <div class="col-xl-3 col-lg-12 u-card">
 											<div class="card card-default seller-card">
 												<div class="card-body text-center">
 													<a href="javascript:0" class="text-secondary d-inline-block">
@@ -1067,10 +1075,10 @@
 													</a>
 												</div>
 											</div>
-										</div>
+										</div> -->
 									</div>
-
-									<div class="row review-rating mt-4">
+									<% } %> 
+									<!-- <div class="row review-rating mt-4">
 										<div class="col-12">
 											<ul class="nav nav-tabs" id="myRatingTab" role="tablist">
 												<li class="nav-item">
@@ -1127,7 +1135,7 @@
 													</ul>
 												</div>
 
-												<div class="tab-pane pt-3 fade" id="productreviews" role="tabpanel">
+												<!-- <div class="tab-pane pt-3 fade" id="productreviews" role="tabpanel">
 													<div class="ec-t-review-wrapper">
 														<div class="ec-t-review-item">
 															<div class="ec-t-review-avtar">
@@ -1177,10 +1185,10 @@
 														</div>
 
 													</div>
-												</div>
+												</div> -->
 											</div>
 										</div>
-									</div>
+									</div> -->
 								</div>
 							</div>
 						</div>
