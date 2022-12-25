@@ -99,3 +99,7 @@ module.exports.mainCategory = (req, res) => {
     res.render('main-category');
 }
 
+module.exports.newOrder = async(req, res) =>{
+    res.render('new-order')
+}
+

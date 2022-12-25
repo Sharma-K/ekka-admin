@@ -27,6 +27,6 @@ router.get('/user-profile', user.userProfile);
 
 router.get('/main-category', user.mainCategory);
 
-
+router.get('/new-order', user.newOrder);
 
 module.exports = router

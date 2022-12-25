@@ -31,4 +31,6 @@ router.get('/grid', product.grid);
 router.get('/:id/edit',product.renderedit);
 
 
+
+
 module.exports = router;

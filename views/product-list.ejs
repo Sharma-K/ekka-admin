@@ -973,7 +973,14 @@
 												<% for(let p of products) {%>
 
 													<tr>
+														<% if(p.images.length>0) {%>
+
 														<td><img class="tbl-thumb" src="<%= p.images[0].url %>" alt="Product Image" /></td>
+														}
+														<% } else { %>
+														<td><img class="tbl-thumb" src="" alt="Product Image" /></td>
+														 
+															<% } %> 
 														<td><%=p.title  %> </td>
 														<td>$<%=p.price  %> </td>
 														<td><%=p.discount%>% OFF</td>
